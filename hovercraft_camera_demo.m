@@ -2,7 +2,6 @@ close all; clear all; clc;
 
 PC_IP = '192.168.7.1';
 BEAGLEBONE_IP = 'http://192.168.7.2';
-PLOT_INTERVAL = 500;
 
 % Initialise ROS on remote master
 setenv('ROS_MASTER_URI', strcat(BEAGLEBONE_IP, ':11311'))
