@@ -20,5 +20,7 @@ while 1
     cnt = cnt + 1;
     T = [T cnt];
     X = [X imu_reading.LinearAcceleration.X];
-    plot_topic(fig, T, X, 'X acceleration', 'r', 100)
+
+    figure(fig);
+    plot_topic(T, X, 'X acceleration', 'r', 100);
 end
