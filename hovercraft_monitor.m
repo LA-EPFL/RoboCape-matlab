@@ -12,7 +12,7 @@ rosinit
 imu_sub = rossubscriber('/hovercraft/imu_readings', rostype.sensor_msgs_Imu, 'BufferSize', 1);
 cam_sub = rossubscriber('/hovercraft/usb_cam/image_raw', rostype.sensor_msgs_Image, 'BufferSize', 1);
 
-fig = figure('Visible', 'off'); hold on;
+fig = figure('Visible', 'off', 'Name','Robocape monitoring GUI'); hold on;
 cnt = 0; T = [];
 AccX = []; AccY = []; AccZ = [];
 GyroX = []; GyroY = []; GyroZ = [];
