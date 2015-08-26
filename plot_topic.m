@@ -1,4 +1,4 @@
-function plot_topic(x, y, y_legend, y_color, x_limit_len)
+function plot_topic(x, y, y_legend, x_limit_len)
 
     x_min = min(x); x_max = max(x);
     x_index_min = 1; x_index_max = length(x);
@@ -9,7 +9,12 @@ function plot_topic(x, y, y_legend, y_color, x_limit_len)
         x_min = x_max - x_avg_pitch * x_limit_len;
     end
 
-    plot(x(x_index_min:end), y(x_index_min:end), y_color);
+    colors = hsv(size(y,1));
+    for i=1:size(y,1)
+        plot(x(x_index_min:end), y(i,x_index_min:end), 'color', colors(i,:));
+        legendinfo{i} = [y_legend ' ' num2str(i)];
+    end
+
     xlim([x_min inf]);
-    legend(y_legend);
+    legend(legendinfo);
 end
